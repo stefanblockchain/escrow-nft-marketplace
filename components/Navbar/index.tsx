@@ -31,23 +31,23 @@ const Navbar: React.FC<NavbarProps> = ({ setAddress, address }) => {
     <header className="bg-white px-10 border-b-2">
       <nav className={`nav`}>
         <div className="searchbar-holder">
-        <Link href={"/"} className="mr-20">
-          <h1 className="logo">Move NFT Create</h1>
-        </Link>
-        <SearchBar/>
+          <Link href={"/"} className="mr-20">
+            <h1 className="logo">Move NFT Create</h1>
+          </Link>
+          <SearchBar />
         </div>
         <div className={`nav__menu-list`}>
           <div className="links-holder">
-        <Link href={"/explore"} className="mr-20">
-          <h1 className="logo">Explore</h1>
-        </Link>
-        <Link href={"/collections"} className="mr-20">
-          <h1 className="logo">Collections</h1>
-        </Link>
-        <Link href={"/profile"} className="mr-20">
-          <h1 className="logo">Profile</h1>
-        </Link>
-        </div>
+            <Link href={"/explore"} className="mr-20">
+              <h1 className="logo">Explore</h1>
+            </Link>
+            <Link href={"/collections"} className="mr-20">
+              <h1 className="logo">Collections</h1>
+            </Link>
+            <Link href={"/profile"} className="mr-20">
+              <h1 className="logo">Profile</h1>
+            </Link>
+          </div>
           <div>
             <div>
               <button
@@ -59,7 +59,7 @@ const Navbar: React.FC<NavbarProps> = ({ setAddress, address }) => {
               >
                 {address ? (
                   <div>
-                    <span style={{ color: '#2AC300', fontSize: '30px', lineHeight: '24px', verticalAlign:'sub'}}>•{' '}</span><span>{trimAddress(address)}</span>
+                    <span style={{ color: '#2AC300', fontSize: '30px', lineHeight: '24px', verticalAlign: 'sub' }}>•{' '}</span><span>{trimAddress(address)}</span>
                   </div>
                 ) : (
                   <span>Connect Wallet</span>

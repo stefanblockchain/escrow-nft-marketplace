@@ -1,12 +1,12 @@
 import React, { useRef, useEffect, useState } from "react";
 
 
-const Avatar = (props:any) => {
+const Avatar = (props: any) => {
   console.log('imageUrl', props.imageUrl);
-  useEffect(() => {}, []);
+  useEffect(() => { }, []);
 
   return (
-    <img src={props.imageUrl} className="avatar-img"/>
+    <img src={props.imageUrl} className="avatar-img" />
   );
 };
 
