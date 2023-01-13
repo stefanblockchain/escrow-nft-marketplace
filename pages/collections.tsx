@@ -4,16 +4,35 @@ import styles from "../styles/Home.module.css";
 import Navbar from "../components/Navbar";
 import CollectionTable from "../components/CollectionTable";
 import CollectionDropDown from "../components/CollectionDropDown";
+import { useEffect, useState } from "react";
+import { getAptosWallet } from "../utils/helper";
+import { Nullable } from "../utils/types";
 
 export default function Create() {
+  const [address, setAddress] = useState<Nullable<string>>(null);
 
+  useEffect(() => {
+    if ("aptos" in window) {
+      (async () => {
+        const wallet = getAptosWallet();
+        if (await wallet.isConnected()) {
+          const account = await wallet.account();
+          setAddress(account.address);
+        }
+      })();
+    }
+  }, []);
+  
   return (<>
   <Head>
         <title>Collections</title>
         <meta name="description" content="Move NFT Create" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-    <Navbar/>
+    <Navbar
+    setAddress={setAddress}
+    address={address}
+    />
 
     <main className={styles.main}>
         <h1 className={styles.title}>
