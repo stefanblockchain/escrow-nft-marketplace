@@ -95,6 +95,7 @@ nav{
 .address-holder{
   margin-top: 6vh;
   margin-left: 5vw;
+  width: max-content;
 }
 
 .center{

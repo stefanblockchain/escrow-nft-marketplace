@@ -5,10 +5,13 @@ import Navbar from "../components/Navbar";
 import { getAptosWallet } from "../utils/helper";
 import { useEffect, useState } from "react";
 import { Nullable } from "../utils/types";
+import Tooltip from '@mui/material/Tooltip';
+import Snackbar from '@mui/material/Snackbar';
 import Avatar from "../components/Avatar";
 
 export default function Create() {
     const [address, setAddress] = useState<Nullable<string>>(null);
+    const [open, setOpen] = useState(false);
 
     useEffect(() => {
       if ("aptos" in window) {
@@ -21,6 +24,16 @@ export default function Create() {
         })();
       }
     }, []);
+
+    const trimAddress = (address:any) => {
+      if(!address) return;
+      return `${address.slice(0,5)}...${address.slice(-5)}`;
+    }
+
+    const copyAction = (address:any) => {
+      navigator.clipboard.writeText(address || '');
+
+    }
 
   return (<>
   <Head>
@@ -36,8 +49,11 @@ export default function Create() {
     <main className={styles.main_profile}>
         <div className="profile-banner"></div>
         <Avatar imageUrl={'https://i.seadn.io/gcs/files/991ad1b50df621c412b570e9ee61ea27.png?auto=format&w=256'}/>
-        <div className="font-bold text-3xl address-holder">{address}</div>
-        {/* <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr> */}
+        <Tooltip title="Copy" placement="top" arrow>
+        <div className="font-bold text-3xl address-holder cursor-pointer" onClick={() => {navigator.clipboard.writeText(address || '')}}>
+          {trimAddress(address)}
+          </div>
+        </Tooltip>
       </main>
       <footer className={styles.footer}>
         <a
