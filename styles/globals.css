@@ -83,6 +83,15 @@ nav{
   background-color: #f7f9fc;
 }
 
+.avatar-img{
+  border-radius: 100%;
+  width:10vw;
+  border: 0.5vw solid #fff;
+  position: absolute;
+  margin-left: 5vw;
+  margin-top: calc(30vh - 8vw);
+}
+
 .center{
   min-height: 600px;
   display: flex;
