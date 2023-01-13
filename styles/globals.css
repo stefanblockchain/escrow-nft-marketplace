@@ -77,6 +77,12 @@ nav{
   background-color: #f7f9fc;
 }
 
+.profile-banner{
+  width:100vw;
+  height:30vh;
+  background-color: #f7f9fc;
+}
+
 .center{
   min-height: 600px;
   display: flex;
