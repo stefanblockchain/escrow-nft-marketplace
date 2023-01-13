@@ -53,6 +53,30 @@ nav{
   border-radius: 2px;
 }
 
+.searchbar-holder{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50vw;
+}
+
+.links-holder{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.collection-name-table-row{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.collection-dropdown{
+  width: 17vw;
+  background-color: #f7f9fc;
+}
+
 .center{
   min-height: 600px;
   display: flex;
