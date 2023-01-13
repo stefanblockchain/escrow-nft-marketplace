@@ -36,6 +36,7 @@ export default function Create() {
     <main className={styles.main_profile}>
         <div className="profile-banner"></div>
         <Avatar imageUrl={'https://i.seadn.io/gcs/files/991ad1b50df621c412b570e9ee61ea27.png?auto=format&w=256'}/>
+        <div className="font-bold text-3xl address-holder">{address}</div>
         {/* <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr> */}
       </main>
       <footer className={styles.footer}>

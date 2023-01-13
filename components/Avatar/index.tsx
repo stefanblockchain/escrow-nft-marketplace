@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 
 
-const Avatar = (props) => {
+const Avatar = (props:any) => {
   console.log('imageUrl', props.imageUrl);
   useEffect(() => {}, []);
 

@@ -92,6 +92,11 @@ nav{
   margin-top: calc(30vh - 8vw);
 }
 
+.address-holder{
+  margin-top: 6vh;
+  margin-left: 5vw;
+}
+
 .center{
   min-height: 600px;
   display: flex;
