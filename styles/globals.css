@@ -102,6 +102,11 @@ nav {
   width: max-content;
 }
 
+.collection-tab {
+  border-bottom: 1px solid rgba(155, 155, 155, 0.5);
+  width: 100vw;
+}
+
 .center {
   min-height: 600px;
   display: flex;

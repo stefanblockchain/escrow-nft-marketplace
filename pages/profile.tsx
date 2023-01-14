@@ -9,6 +9,7 @@ import Tooltip from '@mui/material/Tooltip';
 import Snackbar from '@mui/material/Snackbar';
 import Avatar from "../components/Avatar";
 import { IconButton } from "@mui/material";
+import CollectionTab from "../components/CollectionTab";
 
 export default function Create() {
   const [address, setAddress] = useState<Nullable<string>>(null);
@@ -53,6 +54,7 @@ export default function Create() {
           {trimAddress(address)}
         </div>
       </Tooltip>
+      <CollectionTab />
     </main>
     <footer className={styles.footer}>
       <a
