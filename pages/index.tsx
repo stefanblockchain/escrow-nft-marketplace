@@ -16,14 +16,14 @@ export default function Home() {
         <meta name="description" content="Move NFT Create" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar setAddress={setAddress} address={address}/>
+      <Navbar setAddress={setAddress} address={address} />
       <main className={styles.main}>
         <h1 className={styles.title}>
           Move NFT Create
         </h1>
         <div className='mt-20'>
           <button
-            style={{ backgroundColor: 'black', color: 'white', paddingBlock: '13px', paddingInline: '20px', borderRadius: 5,  fontWeight: 500 }}
+            style={{ backgroundColor: 'black', color: 'white', paddingBlock: '13px', paddingInline: '20px', borderRadius: 5, fontWeight: 500 }}
             onClick={(e) => {
               router.push('/create');
             }}

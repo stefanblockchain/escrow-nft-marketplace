@@ -2,11 +2,13 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Navbar from "../components/Navbar";
-import CollectionTable from "../components/CollectionTable";
-import CollectionDropDown from "../components/CollectionDropDown";
-import { useEffect, useState } from "react";
 import { getAptosWallet } from "../utils/helper";
+import { Fragment, useEffect, useState } from "react";
 import { Nullable } from "../utils/types";
+import Tooltip from '@mui/material/Tooltip';
+import Snackbar from '@mui/material/Snackbar';
+import Avatar from "../components/Avatar";
+import { IconButton } from "@mui/material";
 
 export default function Create() {
   const [address, setAddress] = useState<Nullable<string>>(null);
@@ -23,9 +25,18 @@ export default function Create() {
     }
   }, []);
 
+  const trimAddress = (address: any) => {
+    if (!address) return;
+    return `${address.slice(0, 5)}...${address.slice(-5)}`;
+  }
+
+  const copyAction = (address: any) => {
+    navigator.clipboard.writeText(address || '');
+  }
+
   return (<>
     <Head>
-      <title>Collections</title>
+      <title>Profile</title>
       <meta name="description" content="Move NFT Create" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
@@ -34,14 +45,14 @@ export default function Create() {
       address={address}
     />
 
-    <main className={styles.main}>
-      <h1 className={styles.title}>
-        Collections
-      </h1>
-      <div className="grid place-items-center mt-10">Top collection ranked by floor price and and volume</div>
-      <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
-      <CollectionDropDown />
-      <CollectionTable />
+    <main className={styles.main_profile}>
+      <div className="profile-banner"></div>
+      <Avatar imageUrl={'https://i.seadn.io/gcs/files/991ad1b50df621c412b570e9ee61ea27.png?auto=format&w=256'} />
+      <Tooltip title="Copy" placement="top" arrow>
+        <div className="font-bold text-3xl address-holder cursor-pointer" onClick={() => { navigator.clipboard.writeText(address || '') }}>
+          {trimAddress(address)}
+        </div>
+      </Tooltip>
     </main>
     <footer className={styles.footer}>
       <a
