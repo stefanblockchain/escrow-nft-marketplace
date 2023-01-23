@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Box, Tab, Tabs, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
+import CollectionPreview from "../CollectionPreview";
 
 const CollectionTab = () => {
   const [tabIndex, setTabIndex] = useState(0);
@@ -63,12 +64,39 @@ const CollectionTab = () => {
     },
   ];
 
+  let created = [
+    {
+      collectionName: "Created Pank",
+      nftName: "Crypto Pank #100",
+      imageUrl:
+        "https://i.seadn.io/gcs/files/4c3351c425df8f1b921ecbc5bd643e19.jpg?auto=format&w=1000",
+      lastSale: 2.4,
+      collectionAddress: "example",
+    },
+    {
+      collectionName: "Created Pank",
+      nftName: "Crypto Pank #100",
+      imageUrl:
+        "https://i.seadn.io/gcs/files/1aa081d0a9319ebc40a9e4c5567a43b9.gif?auto=format&w=1000",
+      lastSale: 2.4,
+      collectionAddress: "example",
+    },
+    {
+      collectionName: "Created Pank",
+      nftName: "Crypto Pank #100",
+      imageUrl:
+        "https://i.seadn.io/gcs/files/337365c1952d32f3671f9dee503a6ded.gif?auto=format&w=1000",
+      lastSale: 2.4,
+      collectionAddress: "example",
+    },
+  ];
+
   const handleTabChange = (_event: any, newTabIndex: any) => {
     setTabIndex(newTabIndex);
   };
 
-  const renderItems = () => {
-    const items = collected.map((item) => (
+  const renderItems = (collection: any) => {
+    const items = collection.map((item: any) => (
       <Grid item md={2}>
         <div className="collection-item-holder">
           <div className="collection-item-img-holder">
@@ -117,11 +145,11 @@ const CollectionTab = () => {
       </Box>
 
       <Box sx={{ padding: 2 }}>
-        {tabIndex === 0 && <Box>{renderItems()}</Box>}
+        {tabIndex === 0 && <Box>{renderItems(collected)}</Box>}
         {tabIndex === 1 && (
-          <Box>
-            <Typography>The second tab</Typography>
-          </Box>
+          <div>
+            <Box>{renderItems(created)}</Box>
+          </div>
         )}
       </Box>
     </Box>
