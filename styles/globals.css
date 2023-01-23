@@ -114,6 +114,55 @@ nav {
   align-items: center;
 }
 
+.collection-item-holder {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.collection-item-img-holder {
+  overflow: hidden;
+}
+
+.collection-item-holder img {
+  transition: transform .5s ease;
+}
+
+.collection-item-holder:hover img {
+  transform: scale(1.5);
+}
+
+.collection-item-info {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2vh;
+  margin-left: 2vh;
+  font-weight: bold;
+}
+
+.collection-item-last-price {
+  margin-top: 3vh;
+  margin-left: 2vh;
+  color: rgba(100, 100, 100, 0.8);
+  font-weight: bold;
+  margin-bottom: 2vh;
+}
+
+.collection-item-buy-button {
+  background-color: #378df0;
+  width: 100%;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+}
+
 @media screen and (min-width: 768px) {
   .nav {
     padding: 0px;
