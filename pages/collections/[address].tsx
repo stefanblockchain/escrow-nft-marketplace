@@ -10,7 +10,11 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
-// import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import FormGroup from "@mui/material/FormGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Checkbox from "@mui/material/Checkbox";
+import SideSearchBar from "../../components/SideSearchBar";
+// import SearchBar from "../../components/SearchBar";
 
 export default function Collection() {
   const [address, setAddress] = useState<Nullable<string>>(null);
@@ -145,18 +149,30 @@ export default function Collection() {
         </div>
         <div className="nft-holder">
           <div className="collection-search-holder">
-            <Accordion>
-              <AccordionSummary
-                // expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >
-                <Typography>Accordion 1</Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <span className="search-accordition">Hello</span>
-              </AccordionDetails>
-            </Accordion>
+            <SideSearchBar />
+
+            <div className="sidebar-title">Status</div>
+            <div className="checkbox-inputs">
+              <div className="checkbox-span">
+                <span>Buy now</span>
+                <FormControlLabel control={<Checkbox />} label="" />
+              </div>
+              <div className="checkbox-span">
+                <span>On auction</span>
+                <FormControlLabel control={<Checkbox />} label="" />
+              </div>
+            </div>
+
+            <div className="sidebar-title">Price</div>
+            <div className="control-holder">
+              <div className="price-holder">
+                <input placeholder="MIN" className="price-input" />
+                <span className="controls-text">to</span>
+                <input placeholder="MAX" className="price-input" />
+              </div>
+              <span className="button-span">Search</span>
+            </div>
+            <div className="sidebar-title">Attributes</div>
           </div>
           <NFTTab nfts={collectionInfo.items} />
         </div>
