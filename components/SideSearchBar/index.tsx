@@ -20,7 +20,7 @@ const SideSearchBar = () => {
           ></path>
         </svg>
       </div>
-      <input type="text" className=" border   text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5" placeholder="Search by name" required />
+      <input type="text" className=" border   text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5" placeholder="Search collection by name" required />
     </div>
   );
 };

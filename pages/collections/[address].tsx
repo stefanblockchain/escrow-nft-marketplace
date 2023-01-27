@@ -10,11 +10,10 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
-import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import SideSearchBar from "../../components/SideSearchBar";
-// import SearchBar from "../../components/SearchBar";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 export default function Collection() {
   const [address, setAddress] = useState<Nullable<string>>(null);
@@ -96,6 +95,40 @@ export default function Collection() {
         collectionAddress: "example",
       },
     ],
+    attributes: [
+      { name: "background", values: ["blue", "green", "red"] },
+      { name: "eyes", values: ["blue", "green", "red"] },
+    ],
+  };
+
+  const renderAttributes = () => {
+    const attrs = collectionInfo.attributes.map((attr) => (
+      <Accordion key={attr.name} className="mb-5">
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel2a-content"
+        >
+          <Typography>
+            <span className="attributes-title">{attr.name}</span>
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          {attr.values.map((val) => (
+            <div className="accord-div" key={val}>
+              <span>{val}</span>
+              <FormControlLabel control={<Checkbox />} label="" />
+            </div>
+          ))}
+        </AccordionDetails>
+      </Accordion>
+    ));
+
+    return (
+      <>
+        <div className="sidebar-title">Attributes</div>
+        {attrs}
+      </>
+    );
   };
 
   return (
@@ -172,7 +205,7 @@ export default function Collection() {
               </div>
               <span className="button-span">Search</span>
             </div>
-            <div className="sidebar-title">Attributes</div>
+            {renderAttributes()}
           </div>
           <NFTTab nfts={collectionInfo.items} />
         </div>
