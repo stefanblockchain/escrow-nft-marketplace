@@ -11,8 +11,8 @@ const CollectionDropDown = () => {
   };
 
   return (
-    <div style={{ "width": "70vw"}}>
-    <FormControl sx={{ m: 1 }} className="float-left mb-10 collection-dropdown">
+    <div style={{ "width": "70vw" }}>
+      <FormControl sx={{ m: 1 }} className="float-left mb-10 collection-dropdown">
         <Select
           value={timeSpan}
           onChange={handleChange}
@@ -24,7 +24,7 @@ const CollectionDropDown = () => {
 
         </Select>
       </FormControl>
-      </div>
+    </div>
   );
 };
 
