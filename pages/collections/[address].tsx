@@ -43,6 +43,7 @@ export default function Collection() {
           "https://i.seadn.io/gcs/files/8ae85eadd17db6bdae8168bb9a955d85.png?auto=format&w=1000",
         lastSale: 1,
         collectionAddress: "example",
+        itemId:'545'
       },
       {
         nftName: "Crypto Pank #100",
@@ -50,6 +51,7 @@ export default function Collection() {
           "https://i.seadn.io/gcs/files/e83fd749ec1ac66e1eaf96d6a9ba61cf.gif?auto=format&w=1000",
         lastSale: 2.4,
         collectionAddress: "example",
+        itemId:'555'
       },
       {
         nftName: "Crypto Pank #100",
@@ -57,6 +59,7 @@ export default function Collection() {
           "https://i.seadn.io/gcs/files/8ae85eadd17db6bdae8168bb9a955d85.png?auto=format&w=1000",
         lastSale: 1,
         collectionAddress: "example",
+        itemId:'645'
       },
       {
         nftName: "Crypto Pank #100",
@@ -64,6 +67,7 @@ export default function Collection() {
           "https://i.seadn.io/gcs/files/e83fd749ec1ac66e1eaf96d6a9ba61cf.gif?auto=format&w=1000",
         lastSale: 2.4,
         collectionAddress: "example",
+        itemId:'548'
       },
       {
         nftName: "Crypto Pank #100",
@@ -71,6 +75,7 @@ export default function Collection() {
           "https://i.seadn.io/gcs/files/8ae85eadd17db6bdae8168bb9a955d85.png?auto=format&w=1000",
         lastSale: 1,
         collectionAddress: "example",
+        itemId:'549'
       },
       {
         nftName: "Crypto Pank #100",
@@ -78,6 +83,7 @@ export default function Collection() {
           "https://i.seadn.io/gcs/files/e83fd749ec1ac66e1eaf96d6a9ba61cf.gif?auto=format&w=1000",
         lastSale: 2.4,
         collectionAddress: "example",
+        itemId:'560'
       },
 
       {
@@ -86,6 +92,7 @@ export default function Collection() {
           "https://i.seadn.io/gcs/files/8ae85eadd17db6bdae8168bb9a955d85.png?auto=format&w=1000",
         lastSale: 1,
         collectionAddress: "example",
+        itemId:'575'
       },
       {
         nftName: "Crypto Pank #100",
@@ -93,6 +100,7 @@ export default function Collection() {
           "https://i.seadn.io/gcs/files/e83fd749ec1ac66e1eaf96d6a9ba61cf.gif?auto=format&w=1000",
         lastSale: 2.4,
         collectionAddress: "example",
+        itemId:'580'
       },
     ],
     attributes: [
